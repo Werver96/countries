@@ -10,6 +10,31 @@
 	<input type='button' value='получение информации о стране' onclick='infoName( )'> <br>
 	<input type='button' value='перечень всех стран' onclick='allCountry( )'> <br>
 	<input type='button' value='удаление информации о стране' onclick='delCountry( )'>
-<script src="js/script.js"></script>
+<script src="js/countries.js"></script>
+<script>
+ var countrysH={};
+ var countryName;
+function inputName(){
+    var countryName=prompt('Введите название страны');
+    var capitalName=prompt('Введите название сталицы');
+    (addCountry(countryName,capitalName));
+}
+function infoName(){
+    var infoCountry=prompt('Введите название страны которая вам интересна');
+    alert(getCountryInfo(infoCountry));
+}
+
+function allCountry(){
+    console.log(listCountrys());
+}
+function delCountry(){
+    var delName=prompt('Назовите страну от которой хотите избавиться: \n(некоторым это может не понравиться!)')
+    if (delName in countrysH){
+        deleteCountry(delName);
+        alert('Страна '+delName+' удалена.' + ' Eё сталица была ' + countrysH[delName] + '. \nОшибка, определить сталицу невозможно, отсутствуют данные!');
+}
+    else(alert('К сажелению кто то вас опередил и избавился от страны ' + delName + ' до вас. \nТакой страны найдено небыло!'));
+}
+</script>
 </body>
 </html>
