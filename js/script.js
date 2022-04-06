@@ -1,7 +1,5 @@
-/*
-    var countrysH={};
-
-    function addCountry(countryName,capitalName) {
+/*Код "библиотеки"*/
+ function addCountry(countryName,capitalName) {
         countrysH[countryName]=capitalName;
     }
 
@@ -22,15 +20,35 @@
             res+='\n'+getCountryInfo(CN);
         return res;
     }
+/* Код домашнего задания*/
+ var countrysH={};
+ var countryName;
+function inputName(){
+    var countryName=prompt('Введите название страны');
+    var capitalName=prompt('Введите название сталицы');
+    (addCountry(countryName,capitalName));
+}
+function infoName(){
+    var countryName=prompt('Введите название страны');
+    alert(getCountryInfo(countryName));
+}
 
-    addCountry('Германия','Берлин');
-    addCountry('Венгрия','Будапешт');
-    addCountry('Франция','Париж');
+function allCountry(){
+    console.log(listCountrys());
+}
+function delCountry(){
+    var delName=prompt('Назовите страну от которой хотите избавиться: \n(некоторым это может не понравиться!)')
+    if (delName in countrysH){
+        deleteCountry(delName);
+                alert('Страна '+delName+' удалена.' + ' Eё сталица была ' + countrysH[delName] + '. \nОшибка, определить сталицу невозможно, отсутствуют данные!');
+}
+    else(alert('К сажелению кто то вас опередил и избавился от страны ' + delName + ' до вас. \nТакой страны найдено небыло!'));
+}
 
-    console.log( "список стран:" + listCountrys() );
-*/
 
-
+/* Сперва я сделал код самостоятельно без использования "Библиотеки" 
+(Не внимательно прочитал ТЗ домашнего задания:)*/
+/*
 var allNames={};
 function inputName(){
     var countryName=prompt('Введите название страны');
@@ -59,3 +77,4 @@ function delCountry(){
 }
     else(alert('К сажелению кто то вас опередил и избавился от страны ' + delName + ' до вас. \nТакой страны найдено небыло!'));
 }
+*/
